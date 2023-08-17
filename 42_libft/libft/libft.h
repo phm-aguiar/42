@@ -6,14 +6,14 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:11:54 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/16 12:58:50 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/17 12:00:52 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-// # include <stddef.h>
+# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 
