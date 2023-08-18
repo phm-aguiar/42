@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:25:00 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/18 12:12:18 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/18 19:43:57 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,7 @@ t_list	*ft_lstnew(const char *line)
 	new_line = malloc(sizeof(t_list));
 	if (!new_line)
 		return (0);
-	new_line->line = ft_strdup(line);
-	if (!new_line->line)
-	{
-		free(new_line);
-		return (0);
-	}
+	new_line->line = (char *)line;
 	new_line->next = 0;
 	return (new_line);
 }
