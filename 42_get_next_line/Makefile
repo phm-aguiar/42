@@ -1,6 +1,6 @@
 NAME = get_next_line
 # SRCS_BONUS =
-SRCS = get_next_line.c get_next_line_utils.c
+SRCS = get_next_line.c get_next_line_utils.c main.c
 
 OBJS = $(SRCS:.c=.o)
 # OBJS_BONUS = $(SRCS_BONUS:.c=.o)  # Não há definição de SRCS_BONUS
