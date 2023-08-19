@@ -28,3 +28,10 @@ Minha experiência na 42 tem sido verdadeiramente transformadora. Aprendi a enfr
 Se você está procurando uma escola de programação diferente de tudo que já viu, eu recomendo fortemente a 42. Esta instituição vai desafiar e impulsionar seu crescimento como desenvolvedor(a) de software.
 
 Para saber mais sobre a 42, visite [o site oficial](https://www.42sp.org.br/) e prepare-se para embarcar em uma jornada emocionante de aprendizado e autodesenvolvimento.
+
+
+## Dica fundamental para cadetes
+<div align="center">
+  <img src="https://github.com/phm-aguiar/42/assets/90622996/34a69b94-0470-4a2d-a16c-76aee5138b27" alt="Imagem Centralizada">
+</div>
+
