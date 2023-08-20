@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:24:57 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/18 19:43:24 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/19 19:11:49 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ static void	ft_add_incomplete_line(t_alldata *gnl, t_list **head)
 
 	if (!ft_strchr(gnl->buffer, '\n'))
 	{
-	// 		while (!ft_strchr(gnl->buffer, '\n'))
-	// {
-	// 	new_node = ft_lstnew(gnl->buffer);
-	// 	if (new_node)
-	// 		ft_lstadd_back(head, new_node);
-	// }
+			while (!ft_strchr(gnl->buffer, '\n'))
+	{
+		new_node = ft_lstnew(gnl->buffer);
+		if (new_node)
+			ft_lstadd_back(head, new_node);
+	}
 		new_node = ft_lstnew(gnl->buffer);
 		if (new_node)
 			ft_lstadd_back(head, new_node);
