@@ -6,14 +6,12 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 10:42:08 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/20 09:02:14 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/20 15:49:07 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <unistd.h>
 
-// https://www.youtube.com/watch?v=xgDSXNOHTIA&ab_channel=nikito
 char	*get_next_line(int fd)
 {
 	static t_node	*head;
@@ -24,17 +22,36 @@ char	*get_next_line(int fd)
 		return (NULL);
 	gnl.bytesread = 1;
 	gnl.line = NULL;
-	// ler do fd e jogar na lista linkada
-	// extrair da lista head para a linha
-	// limpar a lista
+	// ler do fd e adicionar na lista linkada
+	read_and_stash(&head, &gnl.bytesread, fd);
+	if (!head)
+		return (NULL);
+
+	// extrair da head para a linha
+	// limpar a head
 	return (gnl.line);
 }
 
-void	read_and_stash(void)
+void	read_and_stash(t_node **head, int *ptr_bytes, int fd)
 {
+	t_gnl	ras;
+
+	ras.buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!ras.buffer)
+		return ;
+	while (!found_newline(*head) && *read != 0)
+	{
+		*ptr_bytes = (int)read(fd, ras.buffer, BUFFER_SIZE);
+		if ((*head == NULL && *ptr_bytes == 0) || *ptr_bytes == -1)
+		{
+			free(ras.buffer);
+			return ;
+		}
+		ras.buffer[*ptr_bytes] = '\0';
+	}
 }
 
-void	add_to_stash(void)
+void	add_to_head(void)
 {
 }
 
@@ -42,6 +59,6 @@ void	extract_line(void)
 {
 }
 
-void	clean_stash(void)
+void	clean_head(void)
 {
 }

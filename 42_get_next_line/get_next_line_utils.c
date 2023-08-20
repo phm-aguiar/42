@@ -6,20 +6,33 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 11:31:57 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/19 11:35:07 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/20 15:56:48 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-t_node	*ft_lstnew(const char *s)
+int	found_newline(t_node *head)
 {
-	t_node	*new_line;
+	int		i;
+	t_node	*current;
 
-	new_line = malloc(sizeof(t_node));
-	if (!new_line)
+	if (!head)
 		return (0);
-	new_line->data = (char *)s;
-	new_line->next = 0;
-	return (new_line);
+	return (0);
+}
+
+t_node	*ft_lst_get_last(void)
+{
+	return (NULL);
+}
+
+void	generate_line(void)
+{
+	return ;
+}
+
+void	free_head(void)
+{
+	return ;
 }

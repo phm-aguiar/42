@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 10:47:41 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/19 22:11:45 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/20 15:04:56 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_gnlvariables
 {
 	size_t			bytesread;
 	char			*line;
+	char			*buffer;
 }					t_gnl;
 
 t_node				*ft_lstnew(const char *s);
