@@ -6,16 +6,16 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 11:31:57 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/20 18:50:28 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:04:41 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	found_newline(t_node *head)
+int	found_newline(t_list *head)
 {
 	int		i;
-	t_node	*current;
+	t_list	*current;
 
 	if (!head)
 		return (0);
@@ -30,9 +30,9 @@ int	found_newline(t_node *head)
 	return (0);
 }
 
-t_node	*ft_lst_get_last(t_node *head)
+t_list	*ft_lst_get_last(t_list *head)
 {
-	t_node	*current;
+	t_list	*current;
 
 	current = head;
 	while (current && current->next)
@@ -40,12 +40,51 @@ t_node	*ft_lst_get_last(t_node *head)
 	return (current);
 }
 
-void	generate_line(void)
+void	generate_line(char **line, t_list *head)
 {
-	return ;
+	int	i;
+	int	len;
+
+	len = 0;
+	while (head)
+	{
+		i = 0;
+		while (head->data[i])
+		{
+			if (head->data[i] == '\n')
+			{
+				len++;
+				break ;
+			}
+			len++;
+			i++;
+		}
+		head = head->next;
+	}
+	*line = malloc((len + 1) * sizeof(char));
 }
 
-void	free_head(void)
+void	free_head(t_list *head)
 {
-	return ;
+	t_list	*current;
+	t_list	*next;
+
+	current = head;
+	while (current)
+	{
+		free(current->data);
+		next = current->next;
+		free(current);
+		current = next;
+	}
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
