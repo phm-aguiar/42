@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 10:47:41 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/20 15:04:56 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/20 18:52:00 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_gnlvariables
 	char			*buffer;
 }					t_gnl;
 
-t_node				*ft_lstnew(const char *s);
 char				*get_next_line(int fd);
+t_node				*ft_lst_get_last(t_node *head);
+int					found_newline(t_node *head);
+void				read_and_stash(t_node **head, int *ptr_bytes, int fd);
 #endif

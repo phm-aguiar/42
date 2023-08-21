@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 10:42:08 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/20 15:49:07 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/20 20:51:11 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	read_and_stash(t_node **head, int *ptr_bytes, int fd)
 			return ;
 		}
 		ras.buffer[*ptr_bytes] = '\0';
+		add_to_stash();
 	}
 }
 
