@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 15:48:17 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/23 18:17:59 by phenriq2         ###   ########.fr       */
+/*   Created: 2023/08/19 21:40:48 by phenriq2          #+#    #+#             */
+/*   Updated: 2023/08/23 18:18:59 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "get_next_line.h"
+#include <fcntl.h>
+#include <stdio.h>
 
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
-
-typedef struct s_node
+int	main(void)
 {
-	char			data;
-	struct s_node	*next;
-}					t_node;
+	int		fd;
+	char	*line;
 
-void				insert_char(t_node **head, char character);
-char				*join(t_node **head);
-char				*get_next_line(int fd);
-
-#endif
+	fd = open("teste.txt", O_RDONLY);
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (line == NULL)
+			break ;
+		printf("%s", line);
+		usleep(50000);
+		free(line);
+	}
+	return (0);
+}

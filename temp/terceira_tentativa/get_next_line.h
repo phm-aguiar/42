@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 15:48:17 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/23 18:17:59 by phenriq2         ###   ########.fr       */
+/*   Created: 2023/08/19 10:47:41 by phenriq2          #+#    #+#             */
+/*   Updated: 2023/08/23 12:16:53 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,31 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 50
 # endif
 
 typedef struct s_node
 {
-	char			data;
+	char			*data;
 	struct s_node	*next;
-}					t_node;
+}					t_list;
 
-void				insert_char(t_node **head, char character);
-char				*join(t_node **head);
+typedef struct s_gnlvariables
+{
+	int				bytesread;
+	char			*line;
+	char			*buffer;
+}					t_gnl;
+
 char				*get_next_line(int fd);
+void				read_and_stash(t_list **head, int *ptr_bytes, int fd);
+void				add_to_head(t_list **head, char *buff, int ptr_bytes);
+void				extract_line(t_list *head, char **line);
+void				clean_head(t_list **head);
+int					ft_strlen(char *str);
+void				free_head(t_list *head);
+int					found_newline(t_list *head);
+void				generate_line(char **line, t_list *head);
+t_list				*ft_lst_get_last(t_list *head);
 
 #endif
