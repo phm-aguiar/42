@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:48:26 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/24 07:41:37 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/24 19:17:42 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,80 +14,81 @@
 
 char	*get_next_line(int fd)
 {
-	static t_node	*head;
+	static t_list	*head;
 	int				bytesread;
-	int				counter;
-	char			chr;
+	char			*line;
 
 	head = NULL;
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &chr, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
-	bytesread = 1;
-	counter = 0;
-	while (bytesread)
-	{
-		bytesread = read(fd, &chr, 1);
-		if (bytesread <= 0 || chr == '\n' || chr == '\0')
-			break ;
-		counter++;
-		insert_char(&head, chr);
-	}
-	return (join(&head));
-}
-
-void	insert_char(t_node **head, char character)
-{
-	t_node	*current;
-	t_node	*new_node;
-
-	if (*head == NULL)
-	{
-		*head = (t_node *)malloc(sizeof(t_node));
-		if (*head == NULL)
-			return ;
-		(*head)->data = character;
-		(*head)->next = NULL;
-	}
-	else
-	{
-		current = *head;
-		while (current->next != NULL)
-			current = current->next;
-		new_node = (t_node *)malloc(sizeof(t_node));
-		if (new_node == NULL)
-			return ;
-		new_node->data = character;
-		new_node->next = NULL;
-		current->next = new_node;
-	}
-}
-
-char	*join(t_node **head)
-{
-	char	*line;
-	int		count;
-	t_node	*current;
-	int		i;
-
-	count = 0;
-	i = 0;
-	current = *head;
-	while (current != NULL)
-	{
-		count++;
-		current = current->next;
-	}
-	line = (char *)malloc((count + 2) * sizeof(char));
-	if (line == NULL)
+	read_the_buffer(fd, &head);
+	bytesread = ft_lstsize(head);
+	line = malloc(bytesread + 2);
+	if (!line)
 		return (NULL);
-	current = *head;
-	while (current != NULL)
-	{
-		line[i] = current->data;
-		current = current->next;
-		i++;
-	}
-	line[i++] = '\n';
-	line[i] = '\0';
+	join(head, line, bytesread);
+	free_node(&head, bytesread);
 	return (line);
+}
+
+void	read_the_buffer(int fd, t_list **head)
+{
+	int		bytesread;
+	char	*chr;
+	char	*current;
+
+	chr = malloc(BUFFER_SIZE + 1);
+	if (!chr)
+		return ;
+	chr[0] = '\0';
+	while (!(strchr(chr, '\n')))
+	{
+		current = chr;
+		bytesread = read(fd, current, BUFFER_SIZE);
+		if (bytesread < 0)
+		{
+			wipe_all_data(head);
+			return ;
+		}
+		else if (bytesread == 0)
+			break ;
+		current[bytesread] = '\0';
+		while (*current != '\0')
+		{
+			insert_char(&*head, *current);
+			current++;
+		}
+	}
+	free(chr);
+}
+
+void	join(t_list *head, char *line, int counter)
+{
+	int		count;
+	t_list	*current;
+
+	current = head;
+	count = 0;
+	while (count < counter && current != NULL)
+	{
+		line[count] = current->data;
+		current = current->next;
+		count++;
+	}
+	line[count++] = '\0';
+}
+
+void	wipe_all_data(t_list **wipe)
+{
+	t_list	*current;
+	t_list	*next;
+
+	current = *wipe;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	*wipe = NULL;
 }
