@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:48:17 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/25 15:22:20 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/27 19:58:36 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,16 @@ typedef struct s_node
 	char			data;
 	struct s_node	*next;
 }					t_list;
+
+void				insert_into_list(t_list **head, char character);
+int					ft_size_lst(t_list **list_of_char);
+void				split_into_characters(const char *readed,
+						t_list **list_of_char);
+void				read_the_file(int fd, t_list **list_of_char);
+char				*extract_line(t_list **list_of_char, int counter);
+void				remove_nodes(t_list **list_of_char, int counter);
+char				*get_next_line(int fd);
+void				create_empty_list(t_list **current);
+void				free_list(t_list **head);
 
 #endif

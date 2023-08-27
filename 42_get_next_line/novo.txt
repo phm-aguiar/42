@@ -1,0 +1,581 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                Welcome to Francinette, a 42 tester framework!                ║
+╚═══════════════════════╦══════════════════════════════╦═══════════════════════╝
+                        ║         get_next_line        ║
+                        ╚══════════════════════════════╝
+⠋ Preparing framework⠙ Preparing framework✔ Preparing framework
+⠋ Executing: norminette⠙ Executing: norminette⠹ Executing: norminette✖ Executing: norminette
+get_next_line_utils.c: Error!
+Error: NEWLINE_PRECEDES_FUNC (line:  42, col:   1):	Functions must be separated by a newline
+Error: SPACE_REPLACE_TAB    (line:  44, col:  11):	Found space when expecting tab
+get_next_line.h: OK!
+get_next_line.c: OK!
+main.c: Error!
+Error: ASSIGN_IN_CONTROL    (line:  25, col:  18):	Assignment in control structure
+
+ℹ Running tests: gnlTester (https://github.com/Tripouille/gnlTester)
+[34m[Mandatory]
+[37m[BUFFER_SIZE = 1]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK [32m2.OK [0m
+[37mfiles/nl: ==18792== Invalid read of size 8
+==18792==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18792==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18792==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18792==    by 0x110032: get_next_line (get_next_line.c:107)
+==18792==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18792==    by 0x10D278: main (mandatory.cpp:40)
+==18792==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18792== 
+[93m1.SIGSEGV
+[37mfiles/41_no_nl: ==18793== Invalid read of size 8
+==18793==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18793==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18793==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18793==    by 0x110032: get_next_line (get_next_line.c:107)
+==18793==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18793==    by 0x10D549: main (mandatory.cpp:45)
+==18793==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18793== 
+[93m1.SIGSEGV
+[37mfiles/41_with_nl: ==18794== Invalid read of size 8
+==18794==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18794==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18794==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18794==    by 0x110032: get_next_line (get_next_line.c:107)
+==18794==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18794==    by 0x10D81A: main (mandatory.cpp:50)
+==18794==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18794== 
+[93m1.SIGSEGV
+[37mfiles/42_no_nl: ==18795== Invalid read of size 8
+==18795==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18795==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18795==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18795==    by 0x110032: get_next_line (get_next_line.c:107)
+==18795==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18795==    by 0x10DAFA: main (mandatory.cpp:56)
+==18795==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18795== 
+[93m1.SIGSEGV
+[37mfiles/42_with_nl: ==18796== Invalid read of size 8
+==18796==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18796==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18796==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18796==    by 0x110032: get_next_line (get_next_line.c:107)
+==18796==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18796==    by 0x10DDCB: main (mandatory.cpp:61)
+==18796==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18796== 
+[93m1.SIGSEGV
+[37mfiles/43_no_nl: ==18797== Invalid read of size 8
+==18797==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18797==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18797==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18797==    by 0x110032: get_next_line (get_next_line.c:107)
+==18797==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18797==    by 0x10E0B5: main (mandatory.cpp:72)
+==18797==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18797== 
+[93m1.SIGSEGV
+[37mfiles/43_with_nl: ==18798== Invalid read of size 8
+==18798==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18798==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18798==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18798==    by 0x110032: get_next_line (get_next_line.c:107)
+==18798==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18798==    by 0x10E386: main (mandatory.cpp:77)
+==18798==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18798== 
+[93m1.SIGSEGV
+[37mfiles/multiple_nlx5: ==18799== Invalid read of size 8
+==18799==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18799==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18799==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18799==    by 0x110032: get_next_line (get_next_line.c:107)
+==18799==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18799==    by 0x10E666: main (mandatory.cpp:83)
+==18799==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18799== 
+[93m1.SIGSEGV
+[37mfiles/multiple_line_no_nl: ==18800== Invalid read of size 8
+==18800==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18800==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18800==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18800==    by 0x110032: get_next_line (get_next_line.c:107)
+==18800==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18800==    by 0x10E973: main (mandatory.cpp:92)
+==18800==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18800== 
+[93m1.SIGSEGV
+[37mfiles/multiple_line_with_nl: ==18801== Invalid read of size 8
+==18801==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18801==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18801==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18801==    by 0x110032: get_next_line (get_next_line.c:107)
+==18801==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18801==    by 0x10EC80: main (mandatory.cpp:101)
+==18801==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18801== 
+[93m1.SIGSEGV
+[37mfiles/alternate_line_nl_no_nl: ==18802== Invalid read of size 8
+==18802==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18802==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18802==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18802==    by 0x110032: get_next_line (get_next_line.c:107)
+==18802==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18802==    by 0x10EF8D: main (mandatory.cpp:110)
+==18802==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18802== 
+[93m1.SIGSEGV
+[37mfiles/alternate_line_nl_with_nl: ==18803== Invalid read of size 8
+==18803==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18803==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18803==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18803==    by 0x110032: get_next_line (get_next_line.c:107)
+==18803==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18803==    by 0x10F2D6: main (mandatory.cpp:123)
+==18803==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18803== 
+[93m1.SIGSEGV
+[37mfiles/big_line_no_nl: ==18804== Invalid read of size 8
+==18804==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18804==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18804==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18804==    by 0x110032: get_next_line (get_next_line.c:107)
+==18804==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18804==    by 0x10F61F: main (mandatory.cpp:136)
+==18804==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18804== 
+[93m1.SIGSEGV
+[37mfiles/big_line_with_nl: ==18805== Invalid read of size 8
+==18805==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18805==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18805==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18805==    by 0x110032: get_next_line (get_next_line.c:107)
+==18805==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18805==    by 0x10F8F0: main (mandatory.cpp:140)
+==18805==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18805== 
+[93m1.SIGSEGV
+[37mstdin: ==18806== Invalid read of size 8
+==18806==    at 0x110176: insert_into_list (get_next_line_utils.c:55)
+==18806==    by 0x10FE2E: split_into_characters (get_next_line.c:34)
+==18806==    by 0x10FEC4: read_the_file (get_next_line.c:53)
+==18806==    by 0x110032: get_next_line (get_next_line.c:107)
+==18806==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18806==    by 0x10FBC0: main (mandatory.cpp:145)
+==18806==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18806== 
+[93m1.SIGSEGV
+
+[37m[BUFFER_SIZE = 42]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK [32m2.OK [0m
+[37mfiles/nl: ==18846== Invalid read of size 8
+==18846==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18846==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18846==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18846==    by 0x110065: get_next_line (get_next_line.c:107)
+==18846==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18846==    by 0x10D278: main (mandatory.cpp:40)
+==18846==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18846== 
+[93m1.SIGSEGV
+[37mfiles/41_no_nl: ==18847== Invalid read of size 8
+==18847==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18847==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18847==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18847==    by 0x110065: get_next_line (get_next_line.c:107)
+==18847==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18847==    by 0x10D549: main (mandatory.cpp:45)
+==18847==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18847== 
+[93m1.SIGSEGV
+[37mfiles/41_with_nl: ==18848== Invalid read of size 8
+==18848==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18848==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18848==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18848==    by 0x110065: get_next_line (get_next_line.c:107)
+==18848==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18848==    by 0x10D81A: main (mandatory.cpp:50)
+==18848==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18848== 
+[93m1.SIGSEGV
+[37mfiles/42_no_nl: ==18849== Invalid read of size 8
+==18849==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18849==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18849==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18849==    by 0x110065: get_next_line (get_next_line.c:107)
+==18849==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18849==    by 0x10DAFA: main (mandatory.cpp:56)
+==18849==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18849== 
+[93m1.SIGSEGV
+[37mfiles/42_with_nl: ==18850== Invalid read of size 8
+==18850==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18850==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18850==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18850==    by 0x110065: get_next_line (get_next_line.c:107)
+==18850==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18850==    by 0x10DDCB: main (mandatory.cpp:61)
+==18850==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18850== 
+[93m1.SIGSEGV
+[37mfiles/43_no_nl: ==18851== Invalid read of size 8
+==18851==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18851==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18851==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18851==    by 0x110065: get_next_line (get_next_line.c:107)
+==18851==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18851==    by 0x10E0E8: main (mandatory.cpp:72)
+==18851==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18851== 
+[93m1.SIGSEGV
+[37mfiles/43_with_nl: ==18852== Invalid read of size 8
+==18852==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18852==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18852==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18852==    by 0x110065: get_next_line (get_next_line.c:107)
+==18852==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18852==    by 0x10E3B9: main (mandatory.cpp:77)
+==18852==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18852== 
+[93m1.SIGSEGV
+[37mfiles/multiple_nlx5: ==18853== Invalid read of size 8
+==18853==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18853==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18853==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18853==    by 0x110065: get_next_line (get_next_line.c:107)
+==18853==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18853==    by 0x10E699: main (mandatory.cpp:83)
+==18853==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18853== 
+[93m1.SIGSEGV
+[37mfiles/multiple_line_no_nl: ==18854== Invalid read of size 8
+==18854==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18854==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18854==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18854==    by 0x110065: get_next_line (get_next_line.c:107)
+==18854==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18854==    by 0x10E9A6: main (mandatory.cpp:92)
+==18854==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18854== 
+[93m1.SIGSEGV
+[37mfiles/multiple_line_with_nl: ==18855== Invalid read of size 8
+==18855==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18855==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18855==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18855==    by 0x110065: get_next_line (get_next_line.c:107)
+==18855==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18855==    by 0x10ECB3: main (mandatory.cpp:101)
+==18855==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18855== 
+[93m1.SIGSEGV
+[37mfiles/alternate_line_nl_no_nl: ==18856== Invalid read of size 8
+==18856==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18856==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18856==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18856==    by 0x110065: get_next_line (get_next_line.c:107)
+==18856==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18856==    by 0x10EFC0: main (mandatory.cpp:110)
+==18856==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18856== 
+[93m1.SIGSEGV
+[37mfiles/alternate_line_nl_with_nl: ==18857== Invalid read of size 8
+==18857==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18857==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18857==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18857==    by 0x110065: get_next_line (get_next_line.c:107)
+==18857==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18857==    by 0x10F309: main (mandatory.cpp:123)
+==18857==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18857== 
+[93m1.SIGSEGV
+[37mfiles/big_line_no_nl: ==18858== Invalid read of size 8
+==18858==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18858==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18858==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18858==    by 0x110065: get_next_line (get_next_line.c:107)
+==18858==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18858==    by 0x10F652: main (mandatory.cpp:136)
+==18858==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18858== 
+[93m1.SIGSEGV
+[37mfiles/big_line_with_nl: ==18859== Invalid read of size 8
+==18859==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18859==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18859==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18859==    by 0x110065: get_next_line (get_next_line.c:107)
+==18859==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18859==    by 0x10F923: main (mandatory.cpp:140)
+==18859==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18859== 
+[93m1.SIGSEGV
+[37mstdin: ==18860== Invalid read of size 8
+==18860==    at 0x1101A9: insert_into_list (get_next_line_utils.c:55)
+==18860==    by 0x10FE61: split_into_characters (get_next_line.c:34)
+==18860==    by 0x10FEF7: read_the_file (get_next_line.c:53)
+==18860==    by 0x110065: get_next_line (get_next_line.c:107)
+==18860==    by 0x10AD46: gnl(int, char const*) (gnl.cpp:20)
+==18860==    by 0x10FBF3: main (mandatory.cpp:145)
+==18860==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18860== 
+[93m1.SIGSEGV
+
+[37m[BUFFER_SIZE = 10000000]: [0m
+[37mInvalid fd: ==18902== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18902== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18902==   no stack segment
+==18902== 
+==18902== Process terminating with default action of signal 11 (SIGSEGV)
+==18902==  Access not within mapped region at address 0x1FFE800818
+==18902== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18902==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18902==  If you believe this happened as a result of a stack
+==18902==  overflow in your program's main thread (unlikely but
+==18902==  possible), you can try to increase the size of the
+==18902==  main thread stack using the --main-stacksize= flag.
+==18902==  The main thread stack size used in this run was 8388608.
+[37mfiles/empty: ==18904== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18904== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18904==   no stack segment
+==18904== 
+==18904== Process terminating with default action of signal 11 (SIGSEGV)
+==18904==  Access not within mapped region at address 0x1FFE800818
+==18904== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18904==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18904==  If you believe this happened as a result of a stack
+==18904==  overflow in your program's main thread (unlikely but
+==18904==  possible), you can try to increase the size of the
+==18904==  main thread stack using the --main-stacksize= flag.
+==18904==  The main thread stack size used in this run was 8388608.
+[37mfiles/nl: ==18906== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18906== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18906==   no stack segment
+==18906== 
+==18906== Process terminating with default action of signal 11 (SIGSEGV)
+==18906==  Access not within mapped region at address 0x1FFE800818
+==18906== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18906==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18906==  If you believe this happened as a result of a stack
+==18906==  overflow in your program's main thread (unlikely but
+==18906==  possible), you can try to increase the size of the
+==18906==  main thread stack using the --main-stacksize= flag.
+==18906==  The main thread stack size used in this run was 8388608.
+[37mfiles/41_no_nl: ==18908== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18908== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18908==   no stack segment
+==18908== 
+==18908== Process terminating with default action of signal 11 (SIGSEGV)
+==18908==  Access not within mapped region at address 0x1FFE800818
+==18908== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18908==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18908==  If you believe this happened as a result of a stack
+==18908==  overflow in your program's main thread (unlikely but
+==18908==  possible), you can try to increase the size of the
+==18908==  main thread stack using the --main-stacksize= flag.
+==18908==  The main thread stack size used in this run was 8388608.
+[37mfiles/41_with_nl: ==18910== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18910== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18910==   no stack segment
+==18910== 
+==18910== Process terminating with default action of signal 11 (SIGSEGV)
+==18910==  Access not within mapped region at address 0x1FFE800818
+==18910== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18910==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18910==  If you believe this happened as a result of a stack
+==18910==  overflow in your program's main thread (unlikely but
+==18910==  possible), you can try to increase the size of the
+==18910==  main thread stack using the --main-stacksize= flag.
+==18910==  The main thread stack size used in this run was 8388608.
+[37mfiles/42_no_nl: ==18912== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18912== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18912==   no stack segment
+==18912== 
+==18912== Process terminating with default action of signal 11 (SIGSEGV)
+==18912==  Access not within mapped region at address 0x1FFE800818
+==18912== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18912==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18912==  If you believe this happened as a result of a stack
+==18912==  overflow in your program's main thread (unlikely but
+==18912==  possible), you can try to increase the size of the
+==18912==  main thread stack using the --main-stacksize= flag.
+==18912==  The main thread stack size used in this run was 8388608.
+[37mfiles/42_with_nl: ==18914== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18914== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18914==   no stack segment
+==18914== 
+==18914== Process terminating with default action of signal 11 (SIGSEGV)
+==18914==  Access not within mapped region at address 0x1FFE800818
+==18914== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18914==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18914==  If you believe this happened as a result of a stack
+==18914==  overflow in your program's main thread (unlikely but
+==18914==  possible), you can try to increase the size of the
+==18914==  main thread stack using the --main-stacksize= flag.
+==18914==  The main thread stack size used in this run was 8388608.
+[37mfiles/43_no_nl: ==18916== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18916== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18916==   no stack segment
+==18916== 
+==18916== Process terminating with default action of signal 11 (SIGSEGV)
+==18916==  Access not within mapped region at address 0x1FFE800818
+==18916== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18916==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18916==  If you believe this happened as a result of a stack
+==18916==  overflow in your program's main thread (unlikely but
+==18916==  possible), you can try to increase the size of the
+==18916==  main thread stack using the --main-stacksize= flag.
+==18916==  The main thread stack size used in this run was 8388608.
+[37mfiles/43_with_nl: ==18918== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18918== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18918==   no stack segment
+==18918== 
+==18918== Process terminating with default action of signal 11 (SIGSEGV)
+==18918==  Access not within mapped region at address 0x1FFE800818
+==18918== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18918==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18918==  If you believe this happened as a result of a stack
+==18918==  overflow in your program's main thread (unlikely but
+==18918==  possible), you can try to increase the size of the
+==18918==  main thread stack using the --main-stacksize= flag.
+==18918==  The main thread stack size used in this run was 8388608.
+[37mfiles/multiple_nlx5: ==18920== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18920== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18920==   no stack segment
+==18920== 
+==18920== Process terminating with default action of signal 11 (SIGSEGV)
+==18920==  Access not within mapped region at address 0x1FFE800818
+==18920== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18920==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18920==  If you believe this happened as a result of a stack
+==18920==  overflow in your program's main thread (unlikely but
+==18920==  possible), you can try to increase the size of the
+==18920==  main thread stack using the --main-stacksize= flag.
+==18920==  The main thread stack size used in this run was 8388608.
+[37mfiles/multiple_line_no_nl: ==18922== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18922== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18922==   no stack segment
+==18922== 
+==18922== Process terminating with default action of signal 11 (SIGSEGV)
+==18922==  Access not within mapped region at address 0x1FFE800818
+==18922== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18922==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18922==  If you believe this happened as a result of a stack
+==18922==  overflow in your program's main thread (unlikely but
+==18922==  possible), you can try to increase the size of the
+==18922==  main thread stack using the --main-stacksize= flag.
+==18922==  The main thread stack size used in this run was 8388608.
+[37mfiles/multiple_line_with_nl: ==18924== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18924== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18924==   no stack segment
+==18924== 
+==18924== Process terminating with default action of signal 11 (SIGSEGV)
+==18924==  Access not within mapped region at address 0x1FFE800818
+==18924== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18924==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18924==  If you believe this happened as a result of a stack
+==18924==  overflow in your program's main thread (unlikely but
+==18924==  possible), you can try to increase the size of the
+==18924==  main thread stack using the --main-stacksize= flag.
+==18924==  The main thread stack size used in this run was 8388608.
+[37mfiles/alternate_line_nl_no_nl: ==18926== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18926== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18926==   no stack segment
+==18926== 
+==18926== Process terminating with default action of signal 11 (SIGSEGV)
+==18926==  Access not within mapped region at address 0x1FFE800818
+==18926== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18926==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18926==  If you believe this happened as a result of a stack
+==18926==  overflow in your program's main thread (unlikely but
+==18926==  possible), you can try to increase the size of the
+==18926==  main thread stack using the --main-stacksize= flag.
+==18926==  The main thread stack size used in this run was 8388608.
+[37mfiles/alternate_line_nl_with_nl: ==18928== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18928== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18928==   no stack segment
+==18928== 
+==18928== Process terminating with default action of signal 11 (SIGSEGV)
+==18928==  Access not within mapped region at address 0x1FFE800818
+==18928== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18928==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18928==  If you believe this happened as a result of a stack
+==18928==  overflow in your program's main thread (unlikely but
+==18928==  possible), you can try to increase the size of the
+==18928==  main thread stack using the --main-stacksize= flag.
+==18928==  The main thread stack size used in this run was 8388608.
+[37mfiles/big_line_no_nl: ==18930== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18930== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18930==   no stack segment
+==18930== 
+==18930== Process terminating with default action of signal 11 (SIGSEGV)
+==18930==  Access not within mapped region at address 0x1FFE800818
+==18930== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18930==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18930==  If you believe this happened as a result of a stack
+==18930==  overflow in your program's main thread (unlikely but
+==18930==  possible), you can try to increase the size of the
+==18930==  main thread stack using the --main-stacksize= flag.
+==18930==  The main thread stack size used in this run was 8388608.
+[37mfiles/big_line_with_nl: ==18932== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18932== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18932==   no stack segment
+==18932== 
+==18932== Process terminating with default action of signal 11 (SIGSEGV)
+==18932==  Access not within mapped region at address 0x1FFE800818
+==18932== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18932==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18932==  If you believe this happened as a result of a stack
+==18932==  overflow in your program's main thread (unlikely but
+==18932==  possible), you can try to increase the size of the
+==18932==  main thread stack using the --main-stacksize= flag.
+==18932==  The main thread stack size used in this run was 8388608.
+[37mstdin: ==18934== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18934== Can't extend stack to 0x1ffe800818 during signal delivery for thread 1:
+==18934==   no stack segment
+==18934== 
+==18934== Process terminating with default action of signal 11 (SIGSEGV)
+==18934==  Access not within mapped region at address 0x1FFE800818
+==18934== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==18934==    at 0x10FE5A: read_the_file (get_next_line.c:40)
+==18934==  If you believe this happened as a result of a stack
+==18934==  overflow in your program's main thread (unlikely but
+==18934==  possible), you can try to increase the size of the
+==18934==  main thread stack using the --main-stacksize= flag.
+==18934==  The main thread stack size used in this run was 8388608.
+
+
+To see the tests open: /home/zeenyt/francinette/tests/get_next_line/gnlTester/tests/mandatory.cpp
+
+ℹ Running tests: fsoares (my own tests)
+[1;35mBUFFER_SIZE[0m: 1
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;33m1.KO Segfault
+[0mSegmentation fault (core dumped)
+make: [Makefile:23: mandatory] Erro 139 (ignorado)
+[1;35mBUFFER_SIZE[0m: 10
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;33m1.KO Segfault
+[0mSegmentation fault (core dumped)
+make: [Makefile:24: mandatory] Erro 139 (ignorado)
+[1;35mBUFFER_SIZE[0m: 1000000
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;33m1.KO Segfault
+[0mSegmentation fault (core dumped)
+make: [Makefile:25: mandatory] Erro 139 (ignorado)
+⠋ Processing output⠙ Processing outputErrors found:
+
+To see the tests open: /home/zeenyt/francinette/tests/get_next_line/fsoares/tester.c
+
+
+Summary: no bonus
+
+Norminette Errors: get_next_line_utils.c, main.c
+
+Failed tests: gnlTester, fsoares
+
