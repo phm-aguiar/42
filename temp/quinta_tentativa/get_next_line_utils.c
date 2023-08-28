@@ -6,29 +6,13 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 15:22:45 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/28 16:53:42 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/28 10:54:23 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	wipe(t_list **list_of_char, int counter)
-{
-	t_list	*current;
-	t_list	*temp;
-
-	current = *list_of_char;
-	while (counter > 0 && current != NULL)
-	{
-		temp = current;
-		current = current->next;
-		free(temp);
-		counter--;
-	}
-	*list_of_char = current;
-}
-
-int	ftsizelst(t_list **list_of_char)
+int	ft_size_lst(t_list **list_of_char)
 {
 	t_list	*size;
 	int		counter;
@@ -43,7 +27,7 @@ int	ftsizelst(t_list **list_of_char)
 	return (counter);
 }
 
-void	start_list(t_list **caracter)
+void	create_empty_list(t_list **current)
 {
 	t_list	*new_list;
 
@@ -52,6 +36,39 @@ void	start_list(t_list **caracter)
 	{
 		new_list->data = '\0';
 		new_list->next = NULL;
-		*caracter = new_list;
+		*current = new_list;
 	}
+}
+
+void	insert_into_list(t_list **head, char character)
+{
+	t_list	*new_node;
+	t_list	*current;
+
+	if (head == NULL || *head == NULL)
+		return ;
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (new_node == NULL)
+		return ;
+	new_node->data = character;
+	new_node->next = NULL;
+	current = *head;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = new_node;
+}
+
+void	free_list(t_list **head)
+{
+	t_list	*current;
+	t_list	*next;
+
+	current = *head;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	*head = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 15:20:07 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/27 20:21:00 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/28 17:08:29 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,114 +23,146 @@
 // tendo uma função que separa meu buffer em caracteres fica facil entender
 // agora que tenho uma função que coloca todos os caracteres na minha lista
 // tenho que fazer uma função que retorna uma string
-// minha função agora extrai e da clear no header até o nó que foi
+// minha função agora extrai e da clear no caracterer até o nó que foi
 // tenho que iniciar minha lista e tbm precisa inserir os caracteres nela
 // agora aparentemente terminei minha gnl
 
-void	split_into_characters(const char *readed, t_list **list_of_char)
-{
-	while (*readed)
-	{
-		insert_into_list(list_of_char, *readed);
-		readed++;
-	}
-}
+/*
+Definir a Estrutura da Lista Encadeada Estática (StaticLinkedList):
+Crie uma estrutura para representar a lista encadeada estática que será usada para armazenar os caracteres de uma linha do arquivo.
+Parâmetros: Um array de caracteres,
+	um índice do próximo elemento e o tamanho máximo da lista.
+Definir a Função (read_line_from_fd):
 
-void	read_the_file(int fd, t_list **list_of_char)
-{
-	char	readed[BUFFER_SIZE + 1];
-	int		bytes;
-	int		size;
+Defina a função que lerá uma linha do descritor de arquivo usando a lista encadeada estática e um tamanho de buffer variável.
+Parâmetros: Descritor de arquivo (fd).
+Inicializar a Lista Encadeada Estática (initialize_list):
 
-	size = BUFFER_SIZE;
-	if (BUFFER_SIZE > 100)
-		size = 1;
-	bytes = read(fd, readed, size);
-	if (fd < 0)
-		return ;
-	if (bytes < 0)
-	{
-		free_list(list_of_char);
-		return ;
-	}
-	else if (bytes == 0)
-	{
-		free_list(list_of_char);
-		return ;
-	}
-	if (*list_of_char == NULL)
-		create_empty_list(list_of_char);
-	readed[bytes] = '\0';
-	split_into_characters(readed, list_of_char);
-}
+Crie uma instância da lista encadeada estática,
+	inicializando o array de caracteres,
+o índice do próximo elemento e definindo o tamanho máximo da lista.
+Parâmetros: Nenhum.
+Ler Caracteres do Descritor de Arquivo em Buffer (read_characters_to_buffer):
 
-char	*extract_line(t_list **list_of_char, int counter)
+Use um loop para ler caracteres do arquivo associado ao descritor de arquivo em um buffer de tamanho variável.
+À medida que lê caracteres,
+	verifique se atingiu o final de linha (\n) ou o final do arquivo.
+Se não atingiu o final de linha ou o final do arquivo,
+	adicione os caracteres ao buffer da lista encadeada estática.
+Parâmetros: A lista encadeada estática,
+	o descritor de arquivo e o tamanho máximo do buffer.
+Retornar a Linha (return_line):
+
+Converta os caracteres armazenados na lista encadeada estática em uma string e retorne a linha lida
+do arquivo como resultado da função.
+Parâmetros: A lista encadeada estática.
+Tratamento de Erros (error_handling):
+
+Implemente tratamento de erros para lidar com problemas ao ler do descritor de arquivo,
+	como erros de leitura ou fim de arquivo.
+Parâmetros: Mensagens de erro ou exceções, se houverem.
+Finalizar a Função (finalize_function):
+
+Finalize a função,
+	garantindo que a string contendo a linha tenha sido retornada e a lista encadeada estática tenha sido liberada.
+Parâmetros: Nenhum.
+Este é o fluxo geral para a criação da função read_line_from_fd que lê uma linha do arquivo usando uma lista encadeada estática
+e um tamanho de buffer variável.
+Certifique-se de implementar cada passo com cuidado,
+	considerando situações de erro e lidando adequadamente com o final do arquivo.
+A função deve retornar uma única linha do arquivo associado ao descritor de arquivo fornecido como entrada.
+*/
+
+void	extract_line(t_list **list_of_char, char **line)
 {
-	char	*line;
 	t_list	*current;
 	int		index;
 
-	if (counter <= 0)
-		return (NULL);
-	line = malloc(counter + 2);
 	if (line != NULL)
 	{
 		current = *list_of_char;
 		index = 0;
-		while (index < counter && current != NULL)
+		while (current->data != '\n' && current != NULL)
 		{
-			line[index] = current->data;
+			*line[index] = current->data;
 			current = current->next;
 			index++;
 		}
-		line[index++] = '\0';
-		line[index] = '\n';
-		return (line);
+		*line[index++] = '\0';
+		*line[index] = '\n';
+		return ;
 	}
-	return (NULL);
+	return ;
 }
 
-void	remove_nodes(t_list **list_of_char, int counter)
+void	add_caracter(t_list **caracter, int c, char *buffer, int fd)
 {
+	t_list	*new_node;
 	t_list	*current;
-	t_list	*temp;
 
-	current = *list_of_char;
-	while (counter > 0 && current != NULL)
+	while (*buffer)
 	{
-		temp = current;
-		current = current->next;
-		free(temp);
-		counter--;
+		if (caracter == NULL || *caracter == NULL)
+			return ;
+		new_node = (t_list *)malloc(sizeof(t_list));
+		if (new_node == NULL)
+			return ;
+		new_node->data = *buffer;
+		new_node->next = NULL;
+		current = *caracter;
+		while (current->next != NULL)
+			current = current->next;
+		current->next = new_node;
+		buffer++;
 	}
-	*list_of_char = current;
+	if (c)
+		read_the_file(fd, caracter);
+}
+
+void	read_the_file(int fd, t_list **caracter)
+{
+	char	current[BUFFER_SIZE + 1];
+	int		bytesread;
+	int		bol;
+	int		index;
+
+	bol = 0;
+	index = 0;
+	bytesread = read(fd, current, BUFFER_SIZE);
+	while (current[index])
+	{
+		if (current[index] == '\0' || current[index] == '\n')
+			bol = 1;
+		index++;
+	}
+	current[bytesread] = '\0';
+	add_caracter(caracter, bol, current, fd);
 }
 
 char	*get_next_line(int fd)
 {
-	static t_list	*list_of_char;
+	static t_list	*caracter;
 	char			*line;
 	int				counter;
 
 	counter = 0;
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0))
 		return (NULL);
-	if (list_of_char == NULL || counter == 0)
+	if (caracter == NULL)
+		start_list(&caracter);
+	read_the_file(fd, &caracter);
+	if (!caracter)
+		return (NULL);
+	counter = ftsizelst(&caracter) + 1;
+	line = malloc(counter);
+	if (!line)
 	{
-		read_the_file(fd, &list_of_char);
-		counter = ft_size_lst(&list_of_char);
-	}
-	counter = ft_size_lst(&list_of_char);
-	if (counter == 0)
-	{
-		free_list(&list_of_char);
+		wipe(&caracter, ftsizelst(&caracter));
 		return (NULL);
 	}
-	line = extract_line(&list_of_char, counter);
-	if (line != NULL)
-	{
-		remove_nodes(&list_of_char, counter);
-		return (line);
-	}
-	return (NULL);
+	extract_line(&caracter, &line);
+	if (!line)
+		return (NULL);
+	wipe(&caracter, ftsizelst(&caracter));
+	return (line);
 }
