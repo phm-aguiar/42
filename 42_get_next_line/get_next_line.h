@@ -6,14 +6,16 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:48:17 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/28 16:52:58 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:32:05 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
+# include <fcntl.h>
 # include <stddef.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -27,13 +29,12 @@ typedef struct s_node
 	struct s_node	*next;
 }					t_list;
 
-void				read_the_file(int fd, t_list **caracter);
+int					read_the_file(int fd, t_list **caracter);
 char				*get_next_line(int fd);
-void				add_caracter(t_list **caracter, int c, char *buffer,
-						int fd);
-void				start_list(t_list **caracter);
-void				extract_line(t_list **list_of_char, char **line);
+void				add_caracter(t_list **caracter, char c);
+void				start_list(t_list **caracter, char c);
 int					ftsizelst(t_list **list_of_char);
+void				wipe_all(t_list **list_of_char);
 void				wipe(t_list **list_of_char, int counter);
 
 #endif
