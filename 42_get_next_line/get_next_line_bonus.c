@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 15:20:07 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/30 17:57:41 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/30 17:58:19 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	ft_extract_line(t_list **list_of_char, char **line, int counter)
 {
@@ -96,28 +96,28 @@ int	ft_read_the_file(int fd, t_list **main_list)
 
 char	*get_next_line(int fd)
 {
-	static t_list	*main_list;
+	static t_list	*main_list[2048];
 	char			*line;
 	int				counter;
 	int				boolean;
 
-	if (fd >= 0 && BUFFER_SIZE >= 0)
-		boolean = ft_read_the_file(fd, &main_list);
-	if ((fd < 0) && !main_list)
+	if (fd >= 0 && BUFFER_SIZE >= 0 )
+		boolean = ft_read_the_file(fd, &main_list[fd]);
+	if ((fd < 0) && !main_list[fd])
 		return (NULL);
-	if (boolean && !main_list)
+	if (boolean && !main_list[fd])
 	{
-		ft_wipe_list(&main_list, -1);
+		ft_wipe_list(&main_list[fd], -1);
 		return (NULL);
 	}
-	counter = ft_sizelst(&main_list);
+	counter = ft_sizelst(&main_list[fd]);
 	line = malloc(counter + 1);
 	if (!line)
 	{
-		ft_wipe_list(&main_list, -1);
+		ft_wipe_list(&main_list[fd], -1);
 		return (NULL);
 	}
-	ft_extract_line(&main_list, &line, counter);
-	ft_wipe_list(&main_list, counter);
+	ft_extract_line(&main_list[fd], &line, counter);
+	ft_wipe_list(&main_list[fd], counter);
 	return (line);
 }
