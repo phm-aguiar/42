@@ -1,21 +1,20 @@
 #!/bin/bash
 
-
 GREEN='\033[32m'
 RED='\033[31m'
-RESET='\033[0m'  
-
+RESET='\033[0m'
 
 NORMINETTE_3_3_40_PATH="$HOME/42/envs/norminette_3_3_40"
 NORMINETTE_3_3_53_PATH="$HOME/42/envs/norminette_3_3_53"
 NORMINETTE_3_3_51_PATH="$HOME/42/envs/norminette_3_3_51"
 
-
 analyze_with_norminette() {
     source "$1/bin/activate"
-    for file in *; do
+    version=$("$1/bin/norminette" --version)  # Obtenha a versão da Norminette
+    echo "Versão da Norminette: $version"  # Exibe a versão da Norminette
+    for file in "$2"/*; do
         if [ -f "$file" ]; then
-            result=$(norminette "$file" 2>&1)
+            result=$("$1/bin/norminette" "$file" 2>&1)
             if [[ "$result" != *"Error"* ]]; then
                 echo -e "${GREEN}SUCCESS${RESET}"
             else
@@ -26,11 +25,22 @@ analyze_with_norminette() {
     deactivate
 }
 
+directory_to_analyze="$1"
+
+if [ -z "$directory_to_analyze" ]; then
+    directory_to_analyze=$(pwd)
+fi
+
 echo "Norminette 3.3.40:"
-analyze_with_norminette "$NORMINETTE_3_3_40_PATH"
+cd "$NORMINETTE_3_3_40_PATH"
+analyze_with_norminette "$NORMINETTE_3_3_40_PATH" "$directory_to_analyze"
+
 echo "Norminette 3.3.53:"
-analyze_with_norminette "$NORMINETTE_3_3_53_PATH"
+cd "$NORMINETTE_3_3_53_PATH"
+analyze_with_norminette "$NORMINETTE_3_3_53_PATH" "$directory_to_analyze"
+
 echo "Norminette 3.3.51:"
-analyze_with_norminette "$NORMINETTE_3_3_51_PATH"
+cd "$NORMINETTE_3_3_51_PATH"
+analyze_with_norminette "$NORMINETTE_3_3_51_PATH" "$directory_to_analyze"
 
 echo "Análise concluída."

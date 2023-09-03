@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 15:20:07 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/31 16:18:16 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/03 14:14:39 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	ft_read_the_file(int fd, t_list **main_list)
 		}
 		current[bytesread] = '\0';
 		if (ft_split_char(current, main_list) == 0)
-			bytesread = 0;
+			break ;
 	}
 	free(current);
 	return (0);
@@ -99,17 +99,11 @@ char	*get_next_line(int fd)
 	static t_list	*main_list[2048];
 	char			*line;
 	int				counter;
-	int				boolean;
 
-	if (fd >= 0 && BUFFER_SIZE >= 0)
-		boolean = ft_read_the_file(fd, &main_list[fd]);
-	if ((fd < 0) && !main_list[fd])
+	if (((fd < 0) && !main_list[fd]) || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (boolean && !main_list[fd])
-	{
-		ft_wipe_list(&main_list[fd], -1);
+	if (ft_read_the_file(fd, &main_list[fd]) && !main_list[fd])
 		return (NULL);
-	}
 	counter = ft_sizelst(&main_list[fd]);
 	line = malloc(counter + 1);
 	if (!line)
