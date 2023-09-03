@@ -1,47 +1,36 @@
 #!/bin/bash
 
-# Variáveis para os caminhos dos ambientes virtuais da Norminette
+
+GREEN='\033[32m'
+RED='\033[31m'
+RESET='\033[0m'  
+
+
 NORMINETTE_3_3_40_PATH="$HOME/42/envs/norminette_3_3_40"
 NORMINETTE_3_3_53_PATH="$HOME/42/envs/norminette_3_3_53"
 NORMINETTE_3_3_51_PATH="$HOME/42/envs/norminette_3_3_51"
 
-# Função para analisar um arquivo com a Norminette 3.3.40
-analyze_3_3_40() {
-    source $NORMINETTE_3_3_40_PATH/bin/activate
-    result=$(norminette "$1" 2>&1)  # Redireciona stdout e stderr para a variável 'result'
+
+analyze_with_norminette() {
+    source "$1/bin/activate"
+    for file in *; do
+        if [ -f "$file" ]; then
+            result=$(norminette "$file" 2>&1)
+            if [[ "$result" != *"Error"* ]]; then
+                echo -e "${GREEN}SUCCESS${RESET}"
+            else
+                echo -e "${RED}$result${RESET}"
+            fi
+        fi
+    done
     deactivate
-    echo "$result"
 }
 
-# Função para analisar um arquivo com a Norminette 3.3.53
-analyze_3_3_53() {
-    source $NORMINETTE_3_3_53_PATH/bin/activate
-    result=$(norminette "$1" 2>&1)
-    deactivate
-    echo "$result"
-}
-
-# Função para analisar um arquivo com a Norminette 3.3.51
-analyze_3_3_51() {
-    source $NORMINETTE_3_3_51_PATH/bin/activate
-    result=$(norminette "$1" 2>&1)
-    deactivate
-    echo "$result"
-}
-
-# Loop para analisar todos os arquivos na pasta atual
-for file in *; do
-    if [ -f "$file" ]; then
-        echo "Analisando arquivo: $file"
-        echo "Norminette 3.3.40:"
-        analyze_3_3_40 "$file"
-        echo "Norminette 3.3.53:"
-        analyze_3_3_53 "$file"
-        echo "Norminette 3.3.51:"
-        analyze_3_3_51 "$file"
-        echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
-    fi
-done
+echo "Norminette 3.3.40:"
+analyze_with_norminette "$NORMINETTE_3_3_40_PATH"
+echo "Norminette 3.3.53:"
+analyze_with_norminette "$NORMINETTE_3_3_53_PATH"
+echo "Norminette 3.3.51:"
+analyze_with_norminette "$NORMINETTE_3_3_51_PATH"
 
 echo "Análise concluída."
-
