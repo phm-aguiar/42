@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 15:20:07 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/30 17:58:19 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:18:16 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ char	*get_next_line(int fd)
 	int				counter;
 	int				boolean;
 
-	if (fd >= 0 && BUFFER_SIZE >= 0 )
+	if (fd >= 0 && BUFFER_SIZE >= 0)
 		boolean = ft_read_the_file(fd, &main_list[fd]);
 	if ((fd < 0) && !main_list[fd])
 		return (NULL);
