@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 08:16:57 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/07/25 18:47:09 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:44:01 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 08:17:45 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/13 20:02:51 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:44:06 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 08:18:22 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/13 20:03:44 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:44:09 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 void	*ft_memcpy(void *array, const void *src, size_t num)
 {

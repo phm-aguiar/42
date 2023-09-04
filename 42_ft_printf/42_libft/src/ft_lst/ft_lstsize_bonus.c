@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:45:58 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/13 20:02:33 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:43:50 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

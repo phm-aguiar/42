@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:11:54 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/03 22:22:33 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:48:54 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,19 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
 typedef struct s_itoa
 {
 	int				counter;
 	char			*memory;
 }					t_data;
-typedef struct s_list
+typedef struct s_node
 {
 	void			*content;
-	struct s_list	*next;
+	struct s_node	*next;
 }					t_list;
 
 int					ft_isdigit(int c);
@@ -72,6 +76,16 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-					void (*del)(void *));
+						void (*del)(void *));
+int					ft_sizelst(t_list **list_of_char);
+int					ft_read_error(t_list **main_list, char *current);
+void				ft_start_list(t_list **caracter, char c);
+void				ft_wipe_list(t_list **list_of_char, int counter);
+char				*get_next_line(int fd);
+int					ft_read_the_file(int fd, t_list **main_list);
+int					ft_split_char(const char *c, t_list **main_list);
+void				ft_add_caracter(t_list **main_list, char character);
+void				ft_extract_line(t_list **list_of_char, char **line,
+						int counter);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 14:31:31 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/14 19:19:31 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:43:58 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 void	*ft_calloc(size_t num_elements, size_t element_size)
 {

@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 13:51:25 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/16 10:10:05 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:44:41 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 void	ft_putstr_fd(const char *s, int fd)
 {

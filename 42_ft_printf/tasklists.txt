@@ -1,0 +1,39 @@
+Com base nas informações fornecidas, aqui estão os possíveis testes que você deve implementar, organizados por ordem de prioridade:
+
+**Prioridade Alta:**
+
+1. **Teste com printf original:** Compare sua função `ft_printf` com a `printf` original usando os mesmos formatos e argumentos para garantir que ela produza os mesmos resultados.
+
+2. **Gerenciamento de memória:** Use o Valgrind para verificar vazamentos de memória, uso de memória não alocada e outros erros de gerenciamento de memória em sua função `ft_printf`.
+
+3. **Teste %c:** Verifique se a função trata corretamente o especificador `%c` para imprimir um único caractere.
+
+4. **Teste %s:** Verifique se a função lida adequadamente com o especificador `%s` para imprimir uma string.
+
+5. **Teste %p:** Certifique-se de que a função processe corretamente o especificador `%p` para imprimir um ponteiro em formato hexadecimal.
+
+6. **Teste %d e %i:** Teste os especificadores `%d` e `%i` para imprimir números inteiros decimais.
+
+7. **Teste %u:** Verifique se a função lida corretamente com o especificador `%u` para imprimir números inteiros decimais sem sinal.
+
+8. **Teste %x e %X:** Teste os especificadores `%x` e `%X` para imprimir números em formato hexadecimal (minúsculo e maiúsculo).
+
+9. **Teste %%:** Garanta que a função lide corretamente com o especificador `%%` para imprimir um sinal de porcentagem.
+
+**Prioridade Média:**
+
+10. **Gerenciamento de Buffer:** Verifique como a função gerencia o buffer para formatação e impressão da saída.
+
+11. **Tratamento de Flags `-` e `0`:** Teste as flags `-` e `0` e verifique como elas afetam a formatação e o alinhamento da saída.
+
+12. **Precisão com %s:** Certifique-se de que a precisão funcione corretamente com o especificador `%s`.
+
+**Prioridade Baixa:**
+
+13. **Flag ` ` (Espaço):** Teste a flag de espaço (` `) e veja como ela imprime um espaço em branco antes de valores positivos, se eles não tiverem um sinal explícito.
+
+14. **Flag `.` (Precisão):** Teste a flag de precisão (`.`) sob os especificadores relevantes.
+
+15. **Flag `#` (Formato Alternativo):** Teste a flag `#` sob os especificadores relevantes, pois ela pode adicionar formatação alternativa.
+
+Lembrando que essa lista prioriza os testes mais essenciais para os especificadores e flags especificados, mas você deve criar testes adicionais à medida que avança no desenvolvimento para cobrir casos específicos e situações de borda. Certifique-se de abordar primeiro os testes que são mais críticos para a funcionalidade da função `ft_printf`.

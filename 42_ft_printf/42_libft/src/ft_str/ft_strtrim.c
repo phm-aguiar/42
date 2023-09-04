@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 14:49:56 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/09 14:38:17 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:45:28 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

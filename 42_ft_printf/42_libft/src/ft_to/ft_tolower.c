@@ -6,9 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 08:27:46 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/07/22 21:02:35 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:46:02 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../../../include/libft.h"
 
 int	ft_tolower(int c)
 {

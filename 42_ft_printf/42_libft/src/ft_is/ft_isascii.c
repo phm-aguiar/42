@@ -6,9 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 19:08:13 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/07/19 13:41:35 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:41:41 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../../../include/libft.h"
 
 int	ft_isascii(int c)
 {

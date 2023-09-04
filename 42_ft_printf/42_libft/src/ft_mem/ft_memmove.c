@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 08:19:08 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/09 14:46:29 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:44:15 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 static void	ft_verify(char *dest, const char *end, size_t num)
 {

@@ -1,0 +1,1 @@
+valgrind --leak-check-full -show-leak-kinds-all -S --trace-children=yes --error-exitcode-1 --log-file-valgrimd.log ./a.out

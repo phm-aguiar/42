@@ -6,7 +6,7 @@
 #    By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 21:29:47 by phenriq2          #+#    #+#              #
-#    Updated: 2023/09/03 21:52:12 by phenriq2         ###   ########.fr        #
+#    Updated: 2023/09/04 14:40:31 by phenriq2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,8 +56,8 @@ FTLST_DIR	=	ft_lst/
 FTLST		=	ft_lstadd_back_bonus ft_lstadd_front_bonus ft_lstclear_bonus ft_lstdelone_bonus \
 				ft_lstiter_bonus ft_lstlast_bonus ft_lstmap_bonus ft_lstnew_bonus ft_lstsize_bonus
 
-FTGNL_DIR = ft_gnl/
-FTGNL   = get_next_line get_next_line_utils
+# FTGNL_DIR = ft_gnl/
+# FTGNL   = get_next_line get_next_line_utils
 
 SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
 SRC_FILES+=$(addprefix $(FTMEM_DIR),$(FTMEM))
@@ -65,7 +65,7 @@ SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
 SRC_FILES+=$(addprefix $(FTTO_DIR),$(FTTO))
 SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
 SRC_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
-SRC_FILES+=$(addprefix $(FTGNL_DIR),$(FTGNL))
+# SRC_FILES+=$(addprefix $(FTGNL_DIR),$(FTGNL))
 
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -93,7 +93,7 @@ $(OBJSF):
 			@mkdir -p $(OBJS_DIR)$(FTTO_DIR)
 			@mkdir -p $(OBJS_DIR)$(FTSTR_DIR)
 			@mkdir -p $(OBJS_DIR)$(FTLST_DIR)
-			@mkdir -p $(OBJS_DIR)$(FTGNL_DIR)
+			# @mkdir -p $(OBJS_DIR)$(FTGNL_DIR)
 
 clean:
 			@$(RM) -rf $(OBJS_DIR)

@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 16:02:14 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/04 16:43:19 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:45:31 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

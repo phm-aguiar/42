@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:13:15 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/08 17:16:26 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:44:37 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

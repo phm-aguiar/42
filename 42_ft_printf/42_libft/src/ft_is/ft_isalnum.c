@@ -6,11 +6,12 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 19:08:20 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/07/19 18:15:10 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:41:33 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
+
 
 int	ft_isalnum(int c)
 {

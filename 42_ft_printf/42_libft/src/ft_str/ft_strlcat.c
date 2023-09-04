@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 08:24:36 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/07/27 18:08:38 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:45:06 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

@@ -6,11 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 16:15:00 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/08/08 14:38:47 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:45:04 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../include/libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
