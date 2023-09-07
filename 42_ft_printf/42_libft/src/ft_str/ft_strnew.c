@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 13:51:25 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/05 13:28:23 by phenriq2         ###   ########.fr       */
+/*   Created: 2023/07/20 15:20:57 by phenriq2          #+#    #+#             */
+/*   Updated: 2023/09/05 13:45:19 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/libft.h"
 
-void	ft_putstr_fd(const char *s, int fd)
+char	*ft_strnew(int counter)
 {
-	write(fd, s, ft_strlen(s));
+	char	*msg;
+
+	msg = malloc((counter + 1) * sizeof(char));
+	if (!(msg))
+		return (NULL);
+	msg[counter] = '\0';
+	return (msg);
 }

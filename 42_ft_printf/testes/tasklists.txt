@@ -1,10 +1,9 @@
-Com base nas informações fornecidas, aqui estão os possíveis testes que você deve implementar, organizados por ordem de prioridade:
 
 **Prioridade Alta:**
 
 1. **Teste com printf original:** Compare sua função `ft_printf` com a `printf` original usando os mesmos formatos e argumentos para garantir que ela produza os mesmos resultados.
 
-2. **Gerenciamento de memória:** Use o Valgrind para verificar vazamentos de memória, uso de memória não alocada e outros erros de gerenciamento de memória em sua função `ft_printf`.
+2. **Gerenciamento de memória.
 
 3. **Teste %c:** Verifique se a função trata corretamente o especificador `%c` para imprimir um único caractere.
 

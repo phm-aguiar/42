@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 13:51:25 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/05 13:28:23 by phenriq2         ###   ########.fr       */
+/*   Created: 2023/09/07 12:56:14 by phenriq2          #+#    #+#             */
+/*   Updated: 2023/09/07 13:14:48 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/libft.h"
+#include <stddef.h>
 
-void	ft_putstr_fd(const char *s, int fd)
+int	ft_putptr(size_t number, char *base)
 {
-	write(fd, s, ft_strlen(s));
+	int	bytesread;
+	int	base_len;
+
+	bytesread = 0;
+	base_len = ft_strlen(base);
+	if (number == 0)
+	{
+		return (ft_putstr("(nil)"));
+	}
+	if (number >= (unsigned long)base_len)
+	{
+		bytesread += ft_putptr((number / base_len), base);
+	}
+	else
+	{
+		bytesread += ft_putstr("0x");
+	}
+	bytesread += ft_putchar(base[number % base_len]);
+	return (bytesread);
 }

@@ -6,7 +6,7 @@
 #    By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 21:29:47 by phenriq2          #+#    #+#              #
-#    Updated: 2023/09/04 14:40:31 by phenriq2         ###   ########.fr        #
+#    Updated: 2023/09/07 14:00:27 by phenriq2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ INCLUDES	=	../include
 SRCS_DIR 	=	src/
 OBJS_DIR	=	obj/
 CC			=	gcc
-CFLAGS		=	-Wall -Werror -Wextra -I
+CFLAGS		=	-Wall -Wextra -I
 RM			=	rm -f
-AR			=	ar rcs
+	AR			=	ar rcs
 
 #Colors
 
@@ -41,23 +41,25 @@ FTIS		=	ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint
 FTMEM_DIR	=	ft_mem/
 FTMEM		=	ft_bzero ft_calloc ft_memchr ft_memcmp ft_memmove ft_memset
 
+FTMATH_DIR	=	ft_math/
+FTMATH		=	ft_nbrlen_base ft_nbrlen 
+
 FTPUT_DIR	=	ft_put/
-FTPUT		=	ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
+FTPUT		=	ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd \
+					ft_putchar ft_putendl ft_putnbr ft_putstr ft_putnbr_base ft_putptr
 
 FTTO_DIR	=	ft_to/
-FTTO		=	ft_atoi ft_itoa ft_tolower ft_toupper
+FTTO		=	ft_atoi ft_itoa ft_tolower ft_toupper ft_itoa_base ft_itoa_unsigned
 
 FTSTR_DIR	=	ft_str/
 FTSTR		=	ft_split ft_strchr ft_strdup ft_striteri ft_strjoin \
 				ft_strlcat ft_strlcpy ft_strlen ft_strmapi ft_strncmp \
-				ft_strnstr ft_strrchr ft_strtrim ft_substr
+				ft_strnstr ft_strrchr ft_strtrim ft_substr ft_strnew ft_strrev
 
 FTLST_DIR	=	ft_lst/
 FTLST		=	ft_lstadd_back_bonus ft_lstadd_front_bonus ft_lstclear_bonus ft_lstdelone_bonus \
 				ft_lstiter_bonus ft_lstlast_bonus ft_lstmap_bonus ft_lstnew_bonus ft_lstsize_bonus
 
-# FTGNL_DIR = ft_gnl/
-# FTGNL   = get_next_line get_next_line_utils
 
 SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
 SRC_FILES+=$(addprefix $(FTMEM_DIR),$(FTMEM))
@@ -65,7 +67,7 @@ SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
 SRC_FILES+=$(addprefix $(FTTO_DIR),$(FTTO))
 SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
 SRC_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
-# SRC_FILES+=$(addprefix $(FTGNL_DIR),$(FTGNL))
+SRC_FILES+=$(addprefix $(FTMATH_DIR),$(FTMATH))
 
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -93,7 +95,7 @@ $(OBJSF):
 			@mkdir -p $(OBJS_DIR)$(FTTO_DIR)
 			@mkdir -p $(OBJS_DIR)$(FTSTR_DIR)
 			@mkdir -p $(OBJS_DIR)$(FTLST_DIR)
-			# @mkdir -p $(OBJS_DIR)$(FTGNL_DIR)
+			@mkdir -p $(OBJS_DIR)$(FTMATH_DIR)
 
 clean:
 			@$(RM) -rf $(OBJS_DIR)

@@ -5,38 +5,64 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 21:50:14 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/04 14:51:39 by phenriq2         ###   ########.fr       */
+/*   Created: 2023/09/05 21:32:34 by phenriq2          #+#    #+#             */
+/*   Updated: 2023/09/07 13:49:07 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/ft_printf.h"
 #include "./include/libft.h"
-#include <stdio.h>
 
-size_t	ft_strlen(const char *msg)
+int	tratament_flags(const char *string, va_list args)
 {
 	int	counter;
 
 	counter = 0;
-	while (msg[counter])
-		counter++;
+	if (*string == 'c')
+		counter = flag_c(args);
+	else if (*string == '%')
+		counter = flag_percent();
+	else if (*string == 'p')
+		counter = flag_p(args);
+	else if (*string == 's')
+		counter = flag_s(args);
+	else if (*string == 'd' || *string == 'i')
+		counter = flag_di(args);
+	else if (*string == 'u')
+		counter = flag_u(args);
+	else if (*string == 'x')
+		counter = flag_x(args);
+	else if (*string == 'X')
+		counter = flag_x2(args);
+	else if (*string == ' ')
+		counter = flag_space();
 	return (counter);
-}
-
-void	ft_putstr_fd(const char *s, int fd)
-{
-	write(fd, s, ft_strlen(s));
 }
 
 int	ft_printf(const char *string, ...)
 {
-	ft_putstr_fd(string, 1);
-	return (0);
-}
+	va_list	args;
+	int		bytes;
+	int		index;
 
-int	main(void)
-{
-	ft_printf("ola mundo\n");
-	printf("ola mundo\n");
+	index = 0;
+	bytes = 0;
+	va_start(args, string);
+	while (string[index] != '\0')
+	{
+		if (string[index] == '%')
+		{
+			index++;
+			if (ft_strchr("c%sdiuxXp ", string[index]) != NULL)
+				bytes += tratament_flags(&string[index], args);
+			index++;
+		}
+		else
+		{
+			bytes += ft_putchar(string[index]);
+			index++;
+		}
+	}
+	va_end(args);
+	return (bytes + 1);
 }

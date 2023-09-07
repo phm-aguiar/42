@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd copy.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 13:51:25 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/05 13:28:23 by phenriq2         ###   ########.fr       */
+/*   Created: 2023/07/31 14:01:29 by phenriq2          #+#    #+#             */
+/*   Updated: 2023/09/05 09:53:01 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/libft.h"
 
-void	ft_putstr_fd(const char *s, int fd)
+void	ft_putendl(char *s)
 {
-	write(fd, s, ft_strlen(s));
+	write(1, s, ft_strlen(s));
+	write(1, "\n", 1);
 }

@@ -6,10 +6,9 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:46:12 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/04 17:24:35 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/05 17:56:48 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 #include <stdio.h>
-

@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_fd copy.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 13:51:25 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/05 13:28:23 by phenriq2         ###   ########.fr       */
+/*   Created: 2023/08/08 17:13:15 by phenriq2          #+#    #+#             */
+/*   Updated: 2023/09/05 09:53:38 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/libft.h"
 
-void	ft_putstr_fd(const char *s, int fd)
+void	ft_putnbr(int n)
 {
-	write(fd, s, ft_strlen(s));
+	char	digit;
+	long	nb;
+
+	nb = n;
+	if (nb == 0)
+	{
+		write(1, "0", 1);
+		return ;
+	}
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb = -nb;
+	}
+	if (nb >= 10)
+		ft_putnbr_fd(nb / 10, 1);
+	digit = '0' + (nb % 10);
+	write(1, &digit, 1);
 }

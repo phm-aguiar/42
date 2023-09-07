@@ -6,35 +6,34 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:49:39 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/04 17:45:37 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/05 09:51:34 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../../../include/libft.h"
 
 int	ft_atoi(const char *nptr)
 {
-	size_t	counter;
+	size_t	index;
 	int		issing;
 	int		result;
 
-	counter = 0;
+	index = 0;
 	result = 0;
 	issing = 1;
-	while ((((nptr[counter] >= 9) && (nptr[counter] <= 13))
-			|| ((nptr[counter]) == 32)))
-		counter++;
-	if ((nptr[counter] == '-') || (nptr[counter] == '+'))
+	while ((((nptr[index] >= 9) && (nptr[index] <= 13))
+			|| ((nptr[index]) == 32)))
+		index++;
+	if ((nptr[index] == '-') || (nptr[index] == '+'))
 	{
-		if ((nptr[counter] == '-'))
+		if ((nptr[index] == '-'))
 			issing *= -1;
-		counter++;
+		index++;
 	}
-	while (nptr[counter] >= '0' && nptr[counter] <= '9')
+	while (nptr[index] >= '0' && nptr[index] <= '9')
 	{
-		result = result * 10 + (nptr[counter] - '0');
-		counter++;
+		result = result * 10 + (nptr[index] - '0');
+		index++;
 	}
 	result *= issing;
 	return (result);

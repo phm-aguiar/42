@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 17:32:12 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/05 09:49:37 by phenriq2         ###   ########.fr       */
+/*   Created: 2023/08/07 11:01:39 by phenriq2          #+#    #+#             */
+/*   Updated: 2023/09/06 09:07:24 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/libft.h"
 
-int	ft_putnbr_base(long nbr, char *base)
+char	*ft_itoa_base(long int nbr, char *base)
 {
-	int	len;
-	int	len_read;
+	t_variables	itoa;
 
-	len_read = 0;
-	if (!base)
-		return (0);
-	len = ft_strlen(base);
+	itoa.len_base = ft_strlen(base);
+	itoa.len = ft_nbrlen(nbr);
+	itoa.str = malloc((itoa.len + 1) * sizeof(char));
+	if (itoa.str == NULL)
+		return (NULL);
+	itoa.str[itoa.len] = '\0';
+	if (nbr == 0)
+	{
+		itoa.str[0] = base[0];
+		return (itoa.str);
+	}
 	if (nbr < 0)
 	{
+		itoa.str[0] = '-';
 		nbr = -nbr;
-		len_read++;
-		ft_putchar_fd('-', 1);
 	}
-	while (nbr >= len)
+	while (itoa.len > 0 && itoa.str[itoa.len - 1] != '-')
 	{
-		len_read++;
-		ft_putchar_fd(base[nbr % len], 1);
-		nbr = nbr / len;
+		itoa.str[--itoa.len] = base[nbr % itoa.len_base];
+		nbr /= itoa.len_base;
 	}
-	ft_putchar_fd(base[nbr], 1);
-	return (len_read);
+	return (itoa.str);
 }

@@ -6,59 +6,36 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:01:39 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/04 17:45:43 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:00:13 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/libft.h"
 
-static t_data	ft_memory_and_counter_itoa(long nbr)
-{
-	t_data	data_base;
-
-	data_base.counter = 0;
-	if (nbr == 0)
-		data_base.counter = 1;
-	else if (nbr < 0)
-	{
-		nbr = -nbr;
-		data_base.counter++;
-	}
-	while (nbr != 0)
-	{
-		nbr /= 10;
-		data_base.counter++;
-	}
-	data_base.memory = (char *)malloc((data_base.counter + 1) * sizeof(char));
-	if (data_base.memory == NULL)
-		return (data_base);
-	data_base.memory[data_base.counter] = '\0';
-	return (data_base);
-}
-
 char	*ft_itoa(int n)
 {
-	t_data	data_base;
-	long	nbr;
+	char	*str;
+	size_t	len;
 
-	nbr = (long)n;
-	data_base = ft_memory_and_counter_itoa(nbr);
-	if (data_base.memory == NULL)
+	len = ft_nbrlen(n);
+	str = malloc((len + 1) * sizeof(char));
+	if (str == NULL)
 		return (NULL);
+	str[len] = '\0';
 	if (n == 0)
 	{
-		data_base.memory[0] = '0';
-		return (data_base.memory);
+		str[0] = '0';
+		return (str);
 	}
 	if (n < 0)
 	{
-		data_base.memory[0] = '-';
-		nbr = -nbr;
+		str[0] = '-';
+		n = -n;
 	}
-	while (data_base.counter > (data_base.memory[0] == '-'))
+	while (len > 0 && str[len - 1] != '-')
 	{
-		data_base.memory[--data_base.counter] = nbr % 10 + '0';
-		nbr /= 10;
+		str[--len] = n % 10 + '0';
+		n /= 10;
 	}
-	return (data_base.memory);
+	return (str);
 }

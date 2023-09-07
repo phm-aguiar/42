@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:11:54 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/04 14:48:54 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/07 13:15:02 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,18 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
-
-typedef struct s_itoa
-{
-	int				counter;
-	char			*memory;
-}					t_data;
 typedef struct s_node
 {
 	void			*content;
 	struct s_node	*next;
 }					t_list;
+
+typedef struct s_itoa_base
+{
+	char			*str;
+	size_t			len;
+	int				len_base;
+}					t_variables;
 
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
@@ -77,15 +75,17 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-int					ft_sizelst(t_list **list_of_char);
-int					ft_read_error(t_list **main_list, char *current);
-void				ft_start_list(t_list **caracter, char c);
-void				ft_wipe_list(t_list **list_of_char, int counter);
-char				*get_next_line(int fd);
-int					ft_read_the_file(int fd, t_list **main_list);
-int					ft_split_char(const char *c, t_list **main_list);
-void				ft_add_caracter(t_list **main_list, char character);
-void				ft_extract_line(t_list **list_of_char, char **line,
-						int counter);
+size_t				ft_nbrlen(long nbr);
+char				*ft_strnew(int counter);
+char				*ft_itoa_base(long int nbr, char *base);
+int					ft_putstr(const char *s);
+void				ft_putnbr(int n);
+int					ft_putnbr_base(long nbr, char *base);
+void				ft_putendl(char *s);
+int					ft_putchar(char c);
+void				ft_strrev(char *ptr);
+int					ft_putptr(size_t number, char *base);
+int					ft_nbrlen_base(int nbr, int len_base);
+char				*ft_itoa_unsigned(unsigned int n);
 
 #endif

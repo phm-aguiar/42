@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_nbrlen_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 13:51:25 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/05 13:28:23 by phenriq2         ###   ########.fr       */
+/*   Created: 2023/09/05 10:10:50 by phenriq2          #+#    #+#             */
+/*   Updated: 2023/09/05 14:47:26 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/libft.h"
 
-void	ft_putstr_fd(const char *s, int fd)
+int	ft_nbrlen_base(int nbr, int len_base)
 {
-	write(fd, s, ft_strlen(s));
+	int	len_nbr;
+
+	len_nbr = 0;
+	if (nbr < 0)
+	{
+		nbr = -nbr;
+		len_nbr++;
+	}
+	while (nbr > 0)
+	{
+		len_nbr++;
+		nbr = nbr / len_base;
+	}
+	return (len_nbr);
 }
