@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:11:54 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/07 13:15:02 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/08 14:11:33 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,17 +75,17 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-size_t				ft_nbrlen(long nbr);
+size_t				ft_nbrlen(long int nbr);
 char				*ft_strnew(int counter);
 char				*ft_itoa_base(long int nbr, char *base);
 int					ft_putstr(const char *s);
-void				ft_putnbr(int n);
-int					ft_putnbr_base(long nbr, char *base);
+size_t				ft_putnbr(long int n);
+size_t				ft_putnbr_base(long int nbr, char *base);
 void				ft_putendl(char *s);
 int					ft_putchar(char c);
 void				ft_strrev(char *ptr);
 int					ft_putptr(size_t number, char *base);
-int					ft_nbrlen_base(int nbr, int len_base);
+size_t				ft_nbrlen_base(long int nbr, int len_base);
 char				*ft_itoa_unsigned(unsigned int n);
 
 #endif

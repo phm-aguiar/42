@@ -6,12 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:32:34 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/07 13:49:07 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:06:23 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/ft_printf.h"
-#include "./include/libft.h"
+#include "ft_printf.h"
 
 int	tratament_flags(const char *string, va_list args)
 {
@@ -53,16 +52,12 @@ int	ft_printf(const char *string, ...)
 		if (string[index] == '%')
 		{
 			index++;
-			if (ft_strchr("c%sdiuxXp ", string[index]) != NULL)
-				bytes += tratament_flags(&string[index], args);
-			index++;
+			bytes += tratament_flags(&string[index], args);
 		}
 		else
-		{
 			bytes += ft_putchar(string[index]);
-			index++;
-		}
+		index++;
 	}
 	va_end(args);
-	return (bytes + 1);
+	return (bytes);
 }

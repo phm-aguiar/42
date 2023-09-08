@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 19:08:13 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/04 17:41:41 by phenriq2         ###   ########.fr       */
+/*   Created: 2023/08/08 17:13:15 by phenriq2          #+#    #+#             */
+/*   Updated: 2023/09/07 15:38:42 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/libft.h"
+#include "libft.h"
 
-int	ft_isascii(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	return (c <= 127 && c >= 0);
+	char	digit;
+	long	nb;
+
+	nb = n;
+	if (nb == 0)
+	{
+		write(fd, "0", 1);
+		return ;
+	}
+	if (nb < 0)
+	{
+		write(fd, "-", 1);
+		nb = -nb;
+	}
+	if (nb >= 10)
+		ft_putnbr_fd(nb / 10, fd);
+	digit = '0' + (nb % 10);
+	write(fd, &digit, 1);
 }

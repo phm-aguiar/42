@@ -6,32 +6,19 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:13:03 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/07 13:49:35 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/08 14:49:06 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/ft_printf.h"
-#include "./include/libft.h"
-#include <stddef.h>
-#include <unistd.h>
+#include "ft_printf.h"
+#include "libft/libft.h"
 
 int	flag_di(va_list args)
 {
-	long	nbr;
-	char	*number;
-	int		index;
-	int		counter;
+	size_t	counter;
 
 	counter = 0;
-	index = 0;
-	nbr = va_arg(args, int);
-	number = ft_itoa_base(nbr, "0123456789");
-	while (number[index])
-	{
-		counter += ft_putchar(number[index]);
-		index++;
-	}
-	free(number);
+	counter = ft_putnbr_base(va_arg(args, int), "0123456789");
 	return (counter);
 }
 
@@ -43,45 +30,27 @@ int	flag_p(va_list args)
 	counter = 0;
 	ptr = va_arg(args, size_t);
 	counter += ft_putptr(ptr, "0123456789abcdef");
-	return (counter -1);
+	return (counter);
 }
 
 int	flag_x(va_list args)
 {
-	int		nbr;
-	int		index;
-	char	*number;
-	int		counter;
+	unsigned int	nbr;
+	int				counter;
 
 	counter = 0;
-	index = 0;
-	nbr = va_arg(args, int);
-	number = ft_itoa_base(nbr, "0123456789abcdef");
-	while (number[index])
-	{
-		counter += ft_putchar(number[index]);
-		index++;
-	}
-	free(number);
+	nbr = va_arg(args, unsigned int);
+	counter = ft_putnbr_base(nbr, "0123456789abcdef");
 	return (counter);
 }
 
 int	flag_x2(va_list args)
 {
-	int		nbr;
-	int		index;
-	char	*number;
-	int		counter;
+	unsigned int	nbr;
+	int				counter;
 
 	counter = 0;
-	index = 0;
-	nbr = va_arg(args, int);
-	number = ft_itoa_base(nbr, "0123456789ABCDEF");
-	while (number[index])
-	{
-		counter += ft_putchar(number[index]);
-		index++;
-	}
-	free(number);
+	nbr = va_arg(args, unsigned int);
+	counter = ft_putnbr_base(nbr, "0123456789ABCDEF");
 	return (counter);
 }

@@ -6,7 +6,7 @@
 #    By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 21:29:47 by phenriq2          #+#    #+#              #
-#    Updated: 2023/09/07 14:00:27 by phenriq2         ###   ########.fr        #
+#    Updated: 2023/09/07 14:43:34 by phenriq2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ INCLUDES	=	../include
 SRCS_DIR 	=	src/
 OBJS_DIR	=	obj/
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -I
+CFLAGS		=	-Wall -Wextra -Werror -I
 RM			=	rm -f
 	AR			=	ar rcs
 

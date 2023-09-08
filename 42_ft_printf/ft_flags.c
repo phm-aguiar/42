@@ -6,19 +6,17 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:59:24 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/07 13:37:11 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:04:46 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/ft_printf.h"
-#include "./include/libft.h"
-#include <stdarg.h>
+#include "ft_printf.h"
 
 int	flag_c(va_list args)
 {
-	char	caracter;
+	int	caracter;
 
-	caracter = va_arg(args, int);
+	caracter = (char)va_arg(args, int);
 	return (ft_putchar(caracter));
 }
 
