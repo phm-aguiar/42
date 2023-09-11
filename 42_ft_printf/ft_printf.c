@@ -6,13 +6,13 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:32:34 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/07 17:06:23 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:35:09 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	tratament_flags(const char *string, va_list args)
+static int	tratament_flags(const char *string, va_list args)
 {
 	int	counter;
 

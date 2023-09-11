@@ -6,12 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:32:12 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/08 14:43:37 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:21:37 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 size_t	ft_putnbr_base(long int number, char *base)
 {

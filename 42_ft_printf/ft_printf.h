@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 21:58:15 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/09 07:54:01 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:06:10 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include "../libft/libft.h"
+# include "./libft/libft.h"
 
 int	ft_printf(const char *string, ...);
 int	flag_c(va_list args);

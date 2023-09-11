@@ -1,28 +1,54 @@
 NAME = libftprintf.a
-TEST = ft_printf.out
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+RM = rm -rf
+
 SRCS = ft_flags_base.c ft_flags.c ft_printf.c
+SRCS_BONUS = ft_flags_base_bonus.c ft_flags_bonus.c ft_printf_bonus.c
 
 OBJS = $(SRCS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-all: $(NAME)
+GREEN = \033[1;32m
+RED = \033[1;31m
+RESET = \033[0m
 
-$(NAME):
-	@make -C libft
-	@gcc -c -Wall -Werror -Wextra $(SRCS)
-	@ar rc $(NAME) *.o libft/*.o
+all: libft $(NAME)
 
-debug: all
-	@gcc -g3 $(SRCS) main.c -o $(TEST) -L. -lftprintf
+$(NAME): $(OBJS)
+	@printf "$(GREEN)Creating $@$(RESET)\n"
+	@ar rcs $(NAME) $(OBJS)
+
+libft:
+	@make -C ./libft --no-print-directory
+	@cp ./libft/libft.a $(NAME)
+
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@printf "$(GREEN)Compiling $<$(RESET)\n"
+
+bonus: libft $(OBJS_BONUS)
+	@printf "$(GREEN)Compiling bonus$(RESET)\n"
+	@ar rcs $(NAME) $(OBJS_BONUS)
 
 clean:
-	@rm -f *.o
-	@make -C libft clean
+	@make -C libft clean --no-print-directory
+	@printf "$(RED)Cleaning objects$(RESET)\n"
+	@$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	@rm -f $(NAME)
-	@rm -f $(TEST)
-	@make -C libft fclean
+	@make -C libft fclean --no-print-directory
+	@printf "$(RED)Cleaning $(NAME)$(RESET)\n"
+	@$(RM) $(NAME)
+
 
 re: fclean all
 
-.PHONY all re fclean clean debug
+.PHONY: all clean re fclean libft bonus
+
+
+
+
+
+

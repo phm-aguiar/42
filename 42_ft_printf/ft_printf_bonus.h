@@ -6,26 +6,25 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 21:58:15 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/09 07:53:08 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:54:38 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_BONUS_H
 # define FT_PRINTF_BONUS_H
 
+# include "./libft/libft.h"
 # include <stdarg.h>
 # include <unistd.h>
-# include "./libft/libft.h"
 
 int	ft_printf(const char *string, ...);
-int	flag_c(va_list args);
-int	flag_percent(void);
-int	flag_s(va_list args);
-int	flag_di(va_list args);
-int	flag_u(va_list args);
-int	flag_x(va_list args);
-int	flag_x2(va_list args);
-int	flag_p(va_list args);
-int	flag_space(void);
-
+int	flag_c_bonus(va_list args);
+int	flag_percent_bonus(void);
+int	flag_s_bonus(va_list args);
+int	flag_di_bonus(va_list args, int flag);
+int	flag_u_bonus(va_list args, int flag);
+int	flag_x_bonus(va_list args, int flag);
+int	flag_x2_bonus(va_list args, int flag);
+int	flag_p_bonus(va_list args);
+int	flag_space_bonus(void);
 #endif
