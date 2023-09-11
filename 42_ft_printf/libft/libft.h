@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:11:54 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/08 14:11:33 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/10 08:00:50 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ void				ft_strrev(char *ptr);
 int					ft_putptr(size_t number, char *base);
 size_t				ft_nbrlen_base(long int nbr, int len_base);
 char				*ft_itoa_unsigned(unsigned int n);
+int					ft_isnonzero_digit(int c);
 
 #endif

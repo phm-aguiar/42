@@ -6,12 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:13:03 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/08 14:49:06 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/10 07:59:12 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 int	flag_di(va_list args)
 {

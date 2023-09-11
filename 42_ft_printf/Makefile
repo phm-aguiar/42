@@ -11,8 +11,8 @@ $(NAME):
 	@gcc -c -Wall -Werror -Wextra $(SRCS)
 	@ar rc $(NAME) *.o libft/*.o
 
-test: all
-	@gcc -g $(SRCS) main.c -o $(TEST) -L. -lftprintf
+debug: all
+	@gcc -g3 $(SRCS) main.c -o $(TEST) -L. -lftprintf
 
 clean:
 	@rm -f *.o
@@ -24,3 +24,5 @@ fclean: clean
 	@make -C libft fclean
 
 re: fclean all
+
+.PHONY all re fclean clean debug
