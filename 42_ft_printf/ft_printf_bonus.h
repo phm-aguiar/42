@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 21:58:15 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/11 16:54:38 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:02:10 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <unistd.h>
 
 int	ft_printf(const char *string, ...);
+int	tratament_flags_bonus_advanced(char chr, int *index);
+int	tratament_flags_bonus(char chr, va_list args, int flag);
 int	flag_c_bonus(va_list args);
 int	flag_percent_bonus(void);
 int	flag_s_bonus(va_list args);

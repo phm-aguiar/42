@@ -16,13 +16,14 @@ RM = rm -rf
 
 GREEN = \033[1;32m
 RED = \033[1;31m
+CYAN = \033[1;35m
 RESET = \033[0m
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@printf "$(GREEN)Creating $@$(RESET)\n"
-	@ar rcs $(NAME) $(OBJS)
+	@printf "\n$(CYAN)Creating $@$(RESET)\n\n"
+	@ar rcs $(NAME) $?
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@

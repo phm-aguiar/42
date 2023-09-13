@@ -1,24 +1,24 @@
 NAME = libftprintf.a
 
-CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
-SRCS = ft_flags_base.c ft_flags.c ft_printf.c
-SRCS_BONUS = ft_flags_base_bonus.c ft_flags_bonus.c ft_printf_bonus.c
+SRCS = ft_flags_base.c ft_flags.c ft_printf.c ft_tratament_flags.c
+SRCS_BONUS = ft_flags_base_bonus.c ft_flags_bonus.c ft_printf_bonus.c ft_tratament_flags_bonus.c
 
-OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+OBJS = $(SRCS:%.c=%.o)
+OBJS_BONUS = $(SRCS_BONUS:%.c=%.o)
 
 GREEN = \033[1;32m
 RED = \033[1;31m
+CYAN = \033[1;35m
 RESET = \033[0m
 
 all: libft $(NAME)
 
 $(NAME): $(OBJS)
-	@printf "$(GREEN)Creating $@$(RESET)\n"
-	@ar rcs $(NAME) $(OBJS)
+	@printf "\n$(CYAN)Creating $@$(RESET)\n"
+	@ar rcs $(NAME) $?
 
 libft:
 	@make -C ./libft --no-print-directory
@@ -29,7 +29,7 @@ libft:
 	@printf "$(GREEN)Compiling $<$(RESET)\n"
 
 bonus: libft $(OBJS_BONUS)
-	@printf "$(GREEN)Compiling bonus$(RESET)\n"
+	@printf "\n$(CYAN)Creating $(NAME) Bonus$(RESET)\n"
 	@ar rcs $(NAME) $(OBJS_BONUS)
 
 clean:
@@ -46,9 +46,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean re fclean libft bonus
-
-
-
-
-
-
