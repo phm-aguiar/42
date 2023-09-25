@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flags.c                                         :+:      :+:    :+:   */
+/*   ft_flags.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:59:24 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/09/07 17:04:46 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:54:27 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	flag_space(void)
 	return (ft_putstr("% "));
 }
 
-int	flag_u(va_list args)
+int	flag_u(va_list args, int flag)
 {
 	unsigned int	nbr;
 	char			*number;
@@ -46,6 +46,8 @@ int	flag_u(va_list args)
 	int				counter;
 
 	counter = 0;
+	if (flag == 2)
+		counter += ft_putchar('+');
 	nbr = va_arg(args, unsigned int);
 	index = 0;
 	number = ft_itoa_unsigned(nbr);

@@ -4,10 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 SRCS = ft_flags_base.c ft_flags.c ft_printf.c ft_tratament_flags.c
-SRCS_BONUS = ft_flags_base_bonus.c ft_flags_bonus.c ft_printf_bonus.c ft_tratament_flags_bonus.c
-
 OBJS = $(SRCS:%.c=%.o)
-OBJS_BONUS = $(SRCS_BONUS:%.c=%.o)
 
 GREEN = \033[1;32m
 RED = \033[1;31m
@@ -28,9 +25,6 @@ libft:
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "$(GREEN)Compiling $<$(RESET)\n"
 
-bonus: libft $(OBJS_BONUS)
-	@printf "\n$(CYAN)Creating $(NAME) Bonus$(RESET)\n"
-	@ar rcs $(NAME) $(OBJS_BONUS)
 
 clean:
 	@make -C libft clean --no-print-directory
@@ -41,8 +35,13 @@ fclean: clean
 	@make -C libft fclean --no-print-directory
 	@printf "$(RED)Cleaning $(NAME)$(RESET)\n"
 	@$(RM) $(NAME)
+	@$(RM) run
 
 
 re: fclean all
 
-.PHONY: all clean re fclean libft bonus
+main:
+	@$(CC) $(CFLAGS) main.c -L . -lftprintf -o run
+	./run
+
+.PHONY: all clean re fclean libft main
