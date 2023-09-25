@@ -7,3 +7,6 @@
 [submodule "42_get_next_line"]
 	path = 42_get_next_line
 	url = git@github.com:phm-aguiar/42_get_next_line.git
+[submodule "42_ft_printf"]
+	path = 42_ft_printf
+	url = git@github.com:phm-aguiar/42_ft_printf.git
