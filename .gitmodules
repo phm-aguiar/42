@@ -16,3 +16,6 @@
 [submodule "Level_1/42_minitalk"]
 	path = Level_1/42_minitalk
 	url = git@github.com:phm-aguiar/42_minitalk.git
+[submodule "Level_1/42_so_long"]
+	path = Level_1/42_so_long
+	url = git@github.com:phm-aguiar/42_so_long.git
