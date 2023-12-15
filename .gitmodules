@@ -4,3 +4,6 @@
 [submodule "Level_0/42_WarnUp"]
 	path = Level_0/42_WarnUp
 	url = git@github.com:phm-aguiar/42_WarnUp.git
+[submodule "Level_2/42_push_swap"]
+	path = Level_2/42_push_swap
+	url = git@github.com:phm-aguiar/42_push_swap.git
