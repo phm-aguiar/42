@@ -34,3 +34,6 @@
 [submodule "scripts"]
 	path = scripts
 	url = git@github.com:phm-aguiar/scripts.git
+[submodule "Individual_Explorations"]
+	path = Individual_Explorations
+	url = git@github.com:phm-aguiar/Individual_Explorations.git
