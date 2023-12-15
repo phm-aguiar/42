@@ -25,3 +25,6 @@
 [submodule "Level_1/42_ft_printf"]
 	path = Level_1/42_ft_printf
 	url = git@github.com:phm-aguiar/42_ft_printf.git
+[submodule "Level_1/42_libft"]
+	path = Level_1/42_libft
+	url = git@github.com:phm-aguiar/42_libft.git
