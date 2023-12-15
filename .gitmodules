@@ -10,3 +10,6 @@
 [submodule "42_ft_printf"]
 	path = 42_ft_printf
 	url = git@github.com:phm-aguiar/42_ft_printf.git
+[submodule "42_evaluation"]
+	path = 42_evaluation
+	url = git@github.com:phm-aguiar/42_evaluation.git
