@@ -22,3 +22,6 @@
 [submodule "Level_1/42_get_next_line"]
 	path = Level_1/42_get_next_line
 	url = git@github.com:phm-aguiar/42_get_next_line.git
+[submodule "Level_1/42_ft_printf"]
+	path = Level_1/42_ft_printf
+	url = git@github.com:phm-aguiar/42_ft_printf.git
