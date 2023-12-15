@@ -31,3 +31,6 @@
 [submodule "Coding_Dojos42"]
 	path = Coding_Dojos42
 	url = git@github.com:phm-aguiar/Coding_Dojos42.git
+[submodule "scripts"]
+	path = scripts
+	url = git@github.com:phm-aguiar/scripts.git
