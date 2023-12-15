@@ -13,3 +13,6 @@
 [submodule "Level_1/42_exam_nv2"]
 	path = Level_1/42_exam_nv2
 	url = git@github.com:phm-aguiar/42_exam_nv2.git
+[submodule "Level_1/42_minitalk"]
+	path = Level_1/42_minitalk
+	url = git@github.com:phm-aguiar/42_minitalk.git
