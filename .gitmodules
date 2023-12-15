@@ -7,3 +7,6 @@
 [submodule "Level_2/42_push_swap"]
 	path = Level_2/42_push_swap
 	url = git@github.com:phm-aguiar/42_push_swap.git
+[submodule "Level_2/42_push_swap_radix"]
+	path = Level_2/42_push_swap_radix
+	url = git@github.com:phm-aguiar/42_push_swap_radix.git
