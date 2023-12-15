@@ -19,3 +19,6 @@
 [submodule "Level_1/42_so_long"]
 	path = Level_1/42_so_long
 	url = git@github.com:phm-aguiar/42_so_long.git
+[submodule "Level_1/42_get_next_line"]
+	path = Level_1/42_get_next_line
+	url = git@github.com:phm-aguiar/42_get_next_line.git
