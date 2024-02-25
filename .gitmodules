@@ -37,3 +37,6 @@
 [submodule "Individual_Explorations"]
 	path = Individual_Explorations
 	url = git@github.com:phm-aguiar/Individual_Explorations.git
+[submodule "Level_2/42_minishell_testes"]
+	path = Level_2/42_minishell_testes
+	url = git@github.com:phm-aguiar/42_minishell_testes.git
